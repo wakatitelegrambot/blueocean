@@ -5,10 +5,10 @@ export default function PostCard({ p }: { p: any }) {
     <Link className="card" href={`/actualites/${p.id}`}>
       <div className="img" style={bg(p.image_url)} />
       <div className="b">
-        <span className="tag">{p.category}</span>
+        {p.category && <span className="tag">{p.category}</span>}
         <h3>{p.title}</h3>
-        <div className="date">{fd(p.created_at)}</div>
         <p>{p.excerpt}</p>
+        <div className="date" style={{ marginTop: 12 }}>{fd(p.created_at)}</div>
       </div>
     </Link>
   );
